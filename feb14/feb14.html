@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habol tayo sa Feb 14</title>
+  <style type="text/css">
+  body {
+    display: flex;
+    background-image: url('1bg.gif');
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    height: 100vh;
+    margin: 0;
+  }
+  button {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 5px;
+    color: white;
+    font-size: 14pt;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  #y {
+    background-color: lime;
+  }
+  #y:active {
+    background-color: green;
+  }
+  #n {
+    background-color: red;
+  }
+  #n:active {
+    background-color: darkred;
+  }
+  .c1 {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .img {
+    max-width: 150px;
+    max-height: 150px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  .p {
+    font-size: 18pt;
+  }
+    
+  </style>
+  </head>
+  <body>
+    <div class="c1" id = "c">
+    <img src="1bg.gif" class="img" id="img2">
+    <p class="p" id="p">Can i court you, given a chance, or not?</p>
+    <button id="y" onclick="g()"><b>Yes</b></button>
+    <button id="n" onclick="f()"><b>No</b></button>
+    </div>
+    <div class="c1" id="d">
+      <img src="happy.gif" class="img" id="img1">
+      <p class="p" id=""><b>YEYYY!!</b></p>
+    </div>
+    <script type="text/javascript">
+    setTimeout(function() {
+    open();
+    }, 1000);
+    function open() {
+      document.getElementById("c").style.opacity = "1";
+    }
+    var flag = 0;
+      function f() {
+        var d = document.getElementById("d");
+        var p = document.getElementById("p");
+        var c = document.getElementById("c");
+        var n = document.getElementById("n");
+        var y = document.getElementById("y");
+        if(flag === 0) {
+          n.innerHTML = "<b>pleaseee..</b>";
+          y.style.fontSize = "30pt";
+          flag = 1;
+         } else if(flag === 1) {
+            n.innerHTML = "<b>Why not? 🥹</b>";
+            y.style.fontSize = "50pt";
+            flag = 2;
+          } else if (flag === 2) {
+            n.innerHTML = "<b>pls pls pls</b>";
+            y.style.fontSize = "100pt";
+            y.style.marginBottom = "25px";
+            flag = 3;
+          } else if (flag === 3) {
+            n.innerHTML = "<b>look oh, im sad na</b>";
+            y.style.fontSize = "200pt";
+            y.style.marginBottom = "25px";
+            flag = 4;
+          } else if (flag === 4) {
+            n.innerHTML = "<b>Gar naman, dali na</b>";
+            n.style.marginTop = "10%";
+            n.style.marginLeft = "30%";
+            n.style.fontSize = "10pt";
+            flag = 5;
+          } else if (flag === 5) {
+            n.innerHTML = "<b>Meoowwww 😿</b>";
+            n.style.marginTop = "30%";
+            n.style.marginLeft = "-30%";
+            n.style.fontSize = "3pt";
+            flag = 6;
+          } else if (flag === 6) {
+            y.style.fontSize = "100pt";
+            n.style.display = "none";
+            p.innerHTML = "<b>Don't play hard to get, just <br>hit that 'Yes' button, silly! 😤</b>";
+            document.getElementById("img2").src = "angy.gif"
+            document.body.style.backgroundImage = "url(angy.gif)";
+            p.style.textShadow = "2px 2px 4px #ffffff"
+          }
+          }
+          function g() {
+            c.style.opacity = "0";
+            d.style.opacity = "1";
+            document.body.style.backgroundImage = "url(happy.gif)";
+            setTimeout(function () {
+            alert("And now let's chat and begin our love story 😻");
+            }, 2000);
+          }
+    </script>
+  </body>
+</html> 
