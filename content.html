@@ -9,8 +9,8 @@
   <style>
 
         .wrap {
-            margin: 50px auto 0;
-            padding: 50px;
+            margin: 0;
+            padding: 0 50px;
         }
 
         /*.gallery {
@@ -115,12 +115,64 @@
         }
         h1 {
             text-align: center;
-            color: white;
+            background: linear-gradient(to right, #00aaff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-family: fantasy;
             margin-bottom: 30px;
             font-size: 100px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5 );
+            text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+            padding-top: 10vh;
+            position: relative;
+            z-index: 1;
         }
+
+        .nav-wrapper {
+            display: flex;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            z-index: 1000;
+        }
+        .nav-wrapper li {
+          background-color: rgba(70, 20, 70, 0.3);
+          backdrop-filter: blur(5px);
+          border-radius: clamp(20px, 2vw, 40px);
+          box-shadow: 2px 2px 30px 2px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          -webkit-tap-highlight-color: transparent;
+          cursor: pointer;
+          transition: transform .1s ease-in, box-shadow .2s ease, background-color .1s ease;
+        } 
+        .nav-wrapper li a {
+          height: clamp(50px, 6vh, 80px);
+          padding: 0 clamp(20px, 2vw, 30px);
+          color: white;
+          text-decoration: none;
+          font-family: "Courier New", monospace;
+          font-weight: 700;
+          font-size: clamp(0.5rem, 1vw, 1rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .nav-wrapper li:hover {
+          background-color: rgba(0, 255, 255, 0.5);
+          transform: translateY(-4px) scale(1.1);
+          box-shadow: 2px 2px 40px 4px rgba(0, 255, 255, 0.5), 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
+          cursor: pointer;
+        }
+        .nav-wrapper li:active {
+          transform: translateY(0px) scale(0.98);
+          box-shadow: 2px 2px 40px 2px rgba(0, 255, 255, 0.8);
+        }
+
         /* Responsive tweaks: fewer columns on small screens */
         @media (max-width: 600px) {
             .gallery { column-width: 160px; column-gap: 10px; }
@@ -133,18 +185,18 @@
     <ul class="links">
       <li><a href="index.html" id="h-btn"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="index.html#about" id="a-btn"><i class="fas fa-info-circle"></i> About</a></li>
-      <li class="dropdown-parent"><a href="#top" id="c-btn"><i class="fas fa-photo-video"></i> Content</a>
-      <ul class="dropdown">
-    <li><a href="#nature">Nature</a></li>
-    <li><a href="#animals">Animals</a></li>
-    <li><a href="#japan">Japan</a></li>
-  </ul>
+      <li><a href="#top" id="c-btn"><i class="fas fa-photo-video"></i> Top</a>
       </li>
     </ul>
   </nav>
+  <ul class="nav-wrapper">
+    <li><a href="#images">Images</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>
 
   <div class="wrap">
-        <h1>GALLERY</h1>
+        <h1 id="images">GALLERY</h1>
         <div class="gallery">
             <img src="internal/bike1.jfif" class="image" alt="">
             <img src="internal/bike2.jfif" class="image" alt="">
@@ -204,7 +256,7 @@
             <img src="try gallery/download (6).jfif" class="image" alt="">
             <img src="try gallery/download.jfif" class="image" alt="">
     </div>
-    <h1>VIDEOS</h1>
+    <h1 id="videos">VIDEOS</h1>
     <div class="gallery">
       <video src="cats/cute4.mp4" class="image" ></video>
       <video src="cats/mc1.mp4" class="image" ></video>
