@@ -31,6 +31,20 @@ body::after {
   transform: scale(0.8);
 }
 
+/* Logo styles */
+.logo {
+     position: fixed;
+     top: 2vh;
+     left: 2vh;
+     width: 60px;
+     height: auto;
+     z-index: 10;
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+     border-radius: 50%;
+     border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 /* Navigation bar */
 .nav-bar {
      display: flex;
@@ -38,7 +52,7 @@ body::after {
      position: fixed;
      align-items: center;
      color: #fff;
-     top: 2vh;
+     top: 3vh;
      left: 50%;
      transform: translateX(-50%);
      width: clamp(280px, 90%, 600px);
@@ -142,7 +156,7 @@ body::after {
 /* Footer styles */
 footer {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: clamp(1rem, 5vh, 3rem);
